@@ -76,12 +76,3 @@ $(document).on("click", ".gif-btn", displayGifs);
 // Calling the renderButtons function to display the intial buttons
 renderButtons();
 
-
-
-
-// var state = $(this).attr("src");
-// console.log("hello");
-// if (state === results[i].images.fixed_height.url) {
-//     $(this).attr("src", results[i].images.fixed_height_still.url);
-//     $(this).attr("src")
-// }
