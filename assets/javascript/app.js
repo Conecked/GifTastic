@@ -26,7 +26,7 @@ function displayGifs() {
             var newDiv = $("<div>");
             var p = $(`<p>Rating: ${results[i].rating}</p>`);
 
-            let img = $('<img class="gif">').attr("src", results[i].images.fixed_height.url);
+            let img = $('<img class="gif">').attr("src", results[i].images.fixed_height_still.url);
 
             newDiv.append(p);
 
@@ -35,8 +35,21 @@ function displayGifs() {
             $("#gifs-view").append(newDiv);
 
         }
+
+        var staticGifSuffix = "200_s.gif";
+        var gifSuffix = "200.gif";
+
+        $(".gif").on("click", function () {
+
+            var originalSrc = $(this).attr("src");
+
+            $(this).attr("src", originalSrc.replace(staticGifSuffix, gifSuffix))
+            
+        });
+
     });
 };
+
 
 function renderButtons() {
     $("#buttons-view").empty();
@@ -50,7 +63,7 @@ function renderButtons() {
     }
 }
 
-$("#add-sport").on("click", function(event) {
+$("#add-sport").on("click", function (event) {
     event.preventDefault();
     var sport = $("#sport-input").val().trim();
     sports.push(sport);
@@ -63,12 +76,12 @@ $(document).on("click", ".gif-btn", displayGifs);
 // Calling the renderButtons function to display the intial buttons
 renderButtons();
 
-$(".gif").on("click", function() {
-    var state = $(this).attr("src");
 
-    if (state === results[i].images.fixed_height.url) {
-        $(this).attr("src", results[i].images.fixed_height_still.url);
-        // $(this).attr("src")
-    }
 
-})
+
+// var state = $(this).attr("src");
+// console.log("hello");
+// if (state === results[i].images.fixed_height.url) {
+//     $(this).attr("src", results[i].images.fixed_height_still.url);
+//     $(this).attr("src")
+// }
