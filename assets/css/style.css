@@ -1,0 +1,64 @@
+body {
+    background-image: url(../images/grey_wash_wall.png);
+}
+
+.container {
+    margin-bottom: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+p {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+input,
+button,
+div,
+form {
+    margin: 10px;
+}
+
+#gifs-view {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+button {
+    background-color: rgba(12, 78, 153, 0.959);
+    box-shadow: 2px 2px 3px 4px #ccc;
+    border-radius: 30px/10px;
+    height: 100px;
+    width: 125px;
+    font-size: 20px;
+}
+
+#sport-input {
+    height: 30px;
+    width: 350px;
+}
+
+.submit-btn {
+    height: 30px;
+    width: 100px;
+    font-size: 15px;
+    background-color: orange;
+    margin-top: 0px;
+}
+
+@media all and (max-width: 800px) {
+    .container,
+    #gifs-view {
+        justify-content: space-around;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .container,
+    #gifs-view {
+        flex-direction: column;
+    }
+}
